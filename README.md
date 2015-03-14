@@ -25,7 +25,41 @@ Scripts Included/In Progress
 
 This uses a BNF-inspired approach to parse and evaluate mathematical expressions with proper order of operations. However, this is the original version assigned from my course, with peculiar objectives that needed to be fulfilled.
 
-Still working on documenting sample input/output cases.
+##### Sample Input/Output
+
+**Case 1:**
+
+```
+1+3 * 5 + 10
+(5 - -5)
+QUIT
+```
+
+```
+26
+10
+```
+
+**Case 2:**
+
+```
+1+1+1
+```
+
+```
+ERR
+```
+
+**Case 3:**
+
+```
+3+5+6+7
+(4+5+(6)
+```
+
+```
+ERR
+```
 
 #### fullparser.rb
 
