@@ -23,7 +23,13 @@ Scripts Included/In Progress
 
 #### assignedparser.rb
 
-This uses a BNF-inspired approach to parse and evaluate mathematical expressions with proper order of operations. However, this is the original version assigned from my course, with peculiar objectives that needed to be fulfilled.
+This uses a BNF-inspired approach to parse and evaluate mathematical expressions with proper order of operations. However, this is the original version assigned from my course, with peculiar objectives that needed to be fulfilled. *This version does not work for division or exponentiation.*
+
+Below are sample cases of input and output for this script. Input is taken from standard in, and output is sent to standard out. 
+
+*Here's where some of the oddities are:* No output will be generated until the input has ended (signaled by EOF). If any of the input format is incorrect, the output will simply generate the "ERR" message. "QUIT" with a newline must be placed after all expressions for the input to be formatted correctly.
+
+These oddities and limitations are corrected in the **fullparser.rb** script.
 
 ##### Sample Input/Output
 
@@ -40,6 +46,9 @@ QUIT
 10
 ```
 
+This case works correctly. Note that spacing and tabbing is ignored by the parser.
+Note that you can input as many '-' as you wish, as they will be evaluated as "negation."
+
 **Case 2:**
 
 ```
@@ -50,16 +59,21 @@ QUIT
 ERR
 ```
 
+This case gives the ERR message, because no QUIT was present at the end of the input.
+
 **Case 3:**
 
 ```
 3+5+6+7
 (4+5+(6)
+QUIT
 ```
 
 ```
 ERR
 ```
+
+This case gives the ERR message, because there is a missing left parenthesis in the second line.
 
 #### fullparser.rb
 
